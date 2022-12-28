@@ -20,10 +20,11 @@ where the x<sub>i</sub> integers greater than 1, corresponds to one or more zumb
 
 We do not have a general proof of this yet, but there is some progress
 
-#### Increase all values in a spectrum by 1
+#### Trick 1: Increase all values in a spectrum by 1
 This can be achieved most easily by adding a 0 to the original zumber. 
 
-#### Generate spectra of the form (2, n) (n ≥ 3)
+
+#### Trick 2: Generate spectra of the form (2, n) (n ≥ 3)
 The following technique works for most values of (A, B, N):
 
 Fix integers A and B. Generate C, D according to the following rules:
@@ -32,6 +33,10 @@ Fix integers A and B. Generate C, D according to the following rules:
         3A - (N-3)B = C
         A - C  = D
 ```
+
+Then generate a zumber with the following pattern:
+
+(-A, -A, ... -A) (N-3 times) + [-C, B, B, B, -B, -B, -D] + (A, A, ... A) (N - 3 times).
 
 (For some small values of A, for instance, the spectrum may contain some additional
 "ghost" values.)
@@ -81,3 +86,6 @@ factorization with more terms.
 to cancel out with a small number of large terms. Removing any of the small terms from the factorization
 automatically forces you to remove SEVERAL small terms, because they were all being cancelled out by the same
 large factor. This technique allows us to "bump" across gaps in a spectra.
+
+Also, note that when paired with Trick 1, we can now generate zumbers for 
+any spectra of the form (M, N).
