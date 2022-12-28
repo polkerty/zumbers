@@ -198,6 +198,9 @@ def search(generator, count=100, print_spectra=False, filter_spectrum=None, filt
 
 
 def check(z):
+    if not is_zumber(z):
+        raise ValueError("This is not a zumber: ", z)
+
     cache = dict()
     # z = (-7, -7, -7, -7, -5, -5, -4, -4, -4, 4, 5, 7, 34)
     # z = canonical_form((-8, -8, -5, 7, 7, 7, -7, -7, -2, 8, 8))
@@ -232,7 +235,7 @@ if __name__ == '__main__':
     # filter_spectrum=(3, 4, 5))
 
     # check(nth_two_star_zumber(4))
-    check((-32, -16, -4, -2, -1, -1, 1, 1, 2, 4, 16, 32))
+    check((-64, -32, -16, -8, -4, -2, -1, -8, 8, 1, 2, 4, 8, 16, 32, 64))
     # filter_rule=lambda z, s: len(s) > 2)
     # check((-7, -7, -7, -9, 10, 10, 10, -10, -10, -1, 7, 7, 7))
     # check((-7, -7, -7, -7, -11, 13, 13, 13, -13, -13, -2, 7, 7, 7, 7))
