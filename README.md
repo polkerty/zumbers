@@ -1,6 +1,10 @@
 # Zumbers
-
-
+A zumber is a multiset of reals with sum 0. The sum of two zumbers is the union of their elements.
+A factorization of a zumber breaks it down into two or more zumbers that can be added to 
+get the original zumber.
+A zumber is "prime" if it cannot be factored.
+A prime factorization is a factorization where all factors are primes. Factorization is
+not unique.
 
 ## Spectrum
 The spectrum of a zumber is the list of different lengths of **prime** factorizations for that zumber. For example,
