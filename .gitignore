@@ -1,3 +1,8 @@
 .idea/
 zumber
 main.js
+*.so
+venv/
+.mypy_cache/
+build/*
+__pycache__/
