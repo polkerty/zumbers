@@ -215,7 +215,7 @@ def check(z: Zumber):
     # z = (-7, -7, -7, -7, -5, -5, -4, -4, -4, 4, 5, 7, 34)
     # z = canonical_form((-8, -8, -5, 7, 7, 7, -7, -7, -2, 8, 8))
     z = canonical_form(z)
-    print(z)
+    print(z, f'[{len(z)}]')
     print(tuple(sorted(list(spectrum(z, cache).keys()))))
     for (n, example) in sorted(spectrum(z, cache).items()):
         print('\t', n, ': ', example)
@@ -224,3 +224,14 @@ def check(z: Zumber):
     # print(tuple(sorted(list(spectrum(z2, cache).keys()))))
     # for (n, example) in sorted(spectrum(z2, cache).items()):
     #     print('\t', n, ': ', example)
+
+
+def gen_triplet(a: int, b: int, c: int):
+    smallest = min(a, b, c)
+    zero_count = smallest - 2
+    (x, y, z) = tuple(sorted((a - zero_count, b - zero_count, c - zero_count)))
+    one_count = z - 2
+    mid_val = z - y + 1
+    last_val = one_count + mid_val
+
+    return (0,) * zero_count + (1,) * one_count + (-1,) * one_count + (mid_val, -mid_val, last_val, -last_val)

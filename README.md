@@ -24,7 +24,12 @@ We do not have a general proof of this yet, but there is some progress
 This can be achieved most easily by adding a 0 to the original zumber. 
 
 
-#### Trick 2: Generate spectra of the form (2, n) (n ≥ 3)
+### Trick 2: Generate spectra of the form (2, n)
+Pick two numbers a, b that are relatively prime.
+
+
+
+#### [old]  Generate spectra of the form (2, n) (n ≥ 3)
 The following technique works for most values of (A, B, N):
 
 Fix integers A and B. Generate C, D according to the following rules:
