@@ -235,3 +235,21 @@ def gen_triplet(a: int, b: int, c: int):
     last_val = one_count + mid_val
 
     return (0,) * zero_count + (1,) * one_count + (-1,) * one_count + (mid_val, -mid_val, last_val, -last_val)
+
+
+def gen_zumber_with_spectrum(spectrum: tuple[int, ...]):
+    zeros = min(spectrum) - 2
+    normalized = tuple(sorted(n - zeros for n in spectrum))
+    ones = max(normalized) - len(spectrum) + 1
+    ret = (0,) * zeros + (1, -1) * ones
+    last = 0
+
+    # This method returns inverted values, so actually invert the list we process
+    inverted: list[int] = [max(normalized) - (point - 2) for point in normalized[1: -1]]
+    iter: list[int] = inverted + [normalized[-1]]
+    for i, point in enumerate(iter):
+        group_ones = point - i - 1
+        val = group_ones + last
+        ret += (val, -val)
+        last += val
+    return ret

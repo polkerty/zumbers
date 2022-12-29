@@ -1,4 +1,5 @@
-from zumber import check, nth_two_star_zumber, search, random_zumber, mutate_zumber, gen_triplet
+from zumber import check, nth_two_star_zumber, search, random_zumber, mutate_zumber, gen_triplet, \
+    gen_zumber_with_spectrum
 
 if __name__ == '__main__':
     # ans = tuple(sorted(sub_zumbers_of_multiset(nth_symmetric_zumber(3), set())))
@@ -35,9 +36,17 @@ if __name__ == '__main__':
     # check((-1, -1, -1, -1, -17, -17, -17, -17, -17, 19, 108, 1, 1, 1, 1, 17, 17, 17, 17, 17, -19, -108))
     # check((-1, -1, -1, -1, -1, -1, -1, -1, -1, 6, 15, 1, 1, 1, 1, 1, 1, 1, 1, 1, -6, -15))
 
-    check(gen_triplet(3, 4, 11))
-    check(gen_triplet(3, 5, 11))
-    check(gen_triplet(3, 6, 11))
-    check(gen_triplet(3, 7, 11))
-    check(gen_triplet(3, 8, 11))
-    check(gen_triplet(3, 9, 11))
+    # check(gen_triplet(3, 4, 11))
+    # check(gen_triplet(3, 5, 11))
+    # check(gen_triplet(3, 6, 11))
+    # check(gen_triplet(3, 7, 11))
+    # check(gen_triplet(3, 8, 11))
+    # check(gen_triplet(3, 9, 11))
+
+    # check((-1,) * 10 + (1,) * 10 + (4, 11, 21, -21, -11, -4))
+    # seq = (6, 9, 10)   (6 -1 - 1s === 5) (9 -2 -1s + 6 === 13) (10 - 3 1's + 13 = 20
+
+    # check(gen_zumber_with_spectrum((2, 6, 9, 10, 12)))
+    check(gen_zumber_with_spectrum((4, 7, 10, 12)))
+    check(gen_zumber_with_spectrum((3, 9, 10)))
+    check(gen_zumber_with_spectrum((2, 3, 6, 8, 9)))
